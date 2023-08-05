@@ -4,10 +4,10 @@ const port = 8000;
 const app = express();
 
 app.get("/",(req,res)=>{
-    res.send("What's up playboy! lol you edited JS file!");
+    res.send("test1");
 });
 app.get("/hi",(req,res)=>{
-    res.send("Really, a sopranos AND godfather reference?");
+    res.send("test2");
 });
 
 app.listen(port, () => {
