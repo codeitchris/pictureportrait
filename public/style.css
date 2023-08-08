@@ -3,28 +3,65 @@ h1 {
 }
 nav {
     text-align: center;
+    position:absolute;
+    text-decoration: none;
+    height:30px;
+    bottom:0;
+    left:0;
+    width:100%;
 }
 html,body{
     width:100%;
     height:100%;
     margin:0;
     padding:0;
-    background-image: linear-gradient(to top, rgb(124, 124, 126), rgb(241, 242, 245));
+    background-image: linear-gradient(to top, rgb(124, 124, 126), rgb(230, 237, 238));
   }
   body{
     position:relative;
   }
-
-footer {
-    position:absolute;
-    text-decoration: none;
-    height:40px;
-    bottom:0;
-    left:0;
-    width:100%;
+a{
+  text-decoration: none;
+  text-align: center;
+  color: rgb(6, 6, 6);
 }
 
-p{
-    color: "blue";
-}
 
+.homebody{
+    text-align: center;
+}
+.button{
+border: none;
+  color: rgb(100, 95, 95);
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  background-color: rgba(204, 201, 201, 0.508);
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 1.5s ease-in, padding 1.5s ease-in, color 1.5s ease-in;
+}
+.button:hover{
+  color: rgba(11, 11, 11, 0.95);
+  background-color: rgba(45, 175, 47, 0.95);
+  padding: 10px 20px;
+}
+.pgbottom{
+  display: flex;
+	padding-inline: 1.5rem;
+	padding-block: 0.8rem;
+	text-decoration: none;
+  transition: color .75s ease-in-out;
+}
+.pgbottom:hover{
+  color: peachpuff;
+}
+.btm{
+	display: flex;
+  justify-content: center;
+	gap: 1rem;
+  background-image: linear-gradient(to bottom, rgb(124, 124, 126), rgb(182, 189, 203));
+}
