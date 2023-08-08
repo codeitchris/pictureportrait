@@ -1,7 +1,11 @@
 import express, {Express, Request, Response} from "express";
+import * as dotenv from 'dotenv';
 const port = 8000;
 
 const app = express();
+
+dotenv.config();
+
 
 app.set('view engine','ejs');
 app.use(express.static("public"))
@@ -29,6 +33,10 @@ app.get("/login",(req,res)=>{
 app.get("/configure",(req,res)=>{
     res.render("options");
 });
+app.get("/chris",(req,res)=>{
+    res.render("chris");
+});
+
 
 
 
