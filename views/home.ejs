@@ -10,7 +10,14 @@
   </head>
   
   <body class="homebody">
-    <button class="button">begin</button>
+    <button class="button" id="myButton">begin</button>
+
+    <script type="text/javascript">
+        document.getElementById("myButton").onclick = function () {
+            location.href = "/login";
+        };
+    </script>
+
   </body>
   <%- include("./partials/footer.ejs") %>  
 </html>

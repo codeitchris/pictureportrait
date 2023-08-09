@@ -15,7 +15,7 @@ html,body{
     height:100%;
     margin:0;
     padding:0;
-    background-image: linear-gradient(to top, rgb(124, 124, 126), rgb(230, 237, 238));
+    background-image: linear-gradient(to top, rgb(253, 219, 189,.95), rgb(246, 242, 232));
   }
   body{
     position:relative;
@@ -51,17 +51,18 @@ border: none;
 }
 .pgbottom{
   display: flex;
+  color: black;
 	padding-inline: 1.5rem;
 	padding-block: 0.8rem;
 	text-decoration: none;
   transition: color .75s ease-in-out;
 }
 .pgbottom:hover{
-  color: peachpuff;
+  color: grey;
 }
 .btm{
 	display: flex;
   justify-content: center;
 	gap: 1rem;
-  background-image: linear-gradient(to bottom, rgb(124, 124, 126), rgb(182, 189, 203));
+  background-image: linear-gradient(to bottom, rgb(253, 219, 189,.85), rgb(248, 242, 229));
 }
