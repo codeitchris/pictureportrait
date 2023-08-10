@@ -63,10 +63,7 @@ app.get("/login",(req,res)=>{
 
 app.get('/images', function(req, res) {
 
-  
 
-  // your application requests refresh and access tokens
-  // after checking the state parameter
 
   const code = req.query.code || null;
   const state = req.query.state || null;
@@ -105,7 +102,7 @@ app.get('/images', function(req, res) {
         };
 
         res.render("images");
-        
+
       } else {
         res.redirect('/#' +
           querystring.stringify({
