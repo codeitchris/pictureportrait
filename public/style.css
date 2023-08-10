@@ -13,23 +13,27 @@ nav {
 html,body{
     width:100%;
     height:100%;
-    margin:0;
+    margin-left: 0;;
     padding:0;
     background-image: linear-gradient(to top, rgb(253, 219, 189,.95), rgb(246, 242, 232));
   }
-  body{
-    position:relative;
-  }
+.homebody{
+  text-align: center;
+}
 a{
   text-decoration: none;
   text-align: center;
   color: rgb(6, 6, 6);
 }
 
-
-.homebody{
-    text-align: center;
+.aboutpg{
+  width:80%;
+  height:100%;
+  margin-left: 10%;;
+  padding:0;
+  background-image: linear-gradient(to top, rgb(253, 219, 189,.95), rgb(246, 242, 232));
 }
+
 .button{
 border: none;
   color: rgb(100, 95, 95);
@@ -59,6 +63,13 @@ border: none;
 }
 .pgbottom:hover{
   color: grey;
+}
+.listthing{
+  list-style-type: circle;
+}
+.listthing li:after{
+    white-space: pre;
+  
 }
 .btm{
 	display: flex;

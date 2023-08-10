@@ -8,11 +8,12 @@ async function fetchWebApi(endpoint: string, method:string, token: string) {
     return await res.json();
   }
   
-   async function getTopTracks(token:string){
-    // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
-    return (await fetchWebApi(
-      'v1/me/top/tracks?time_range=short_term&limit=5', 'GET', token)).items;
-  }
-  export function runit(token: string){
+async function getTopTracks(token:string){
+  // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
+  return (await fetchWebApi(
+    'v1/me/top/tracks?time_range=short_term&limit=5', 'GET', token)).items;
+}
 
-  }
+export function runit(token: string){
+  
+}

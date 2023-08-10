@@ -16,7 +16,7 @@ dotenv.config();
 // following from the official spotify example here: https://github.com/spotify/web-api-examples/blob/master/authentication/authorization_code/app.js 
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
-const redirect_uri = "http://localhost:8000/options";
+const redirect_uri = "http://localhost:8000/images";
 const stateKey = "idk-rn";
 
 
@@ -41,12 +41,6 @@ app.get("/about",(req,res)=>{
     res.render("about");
 });
 
-app.get("/loading",(req,res)=>{
-    res.render("loading");
-});
-
-
-
 app.get("/login",(req,res)=>{
 
   const state = generateRandomString(16);
@@ -67,7 +61,9 @@ app.get("/login",(req,res)=>{
     
 });
 
-app.get('/callback', function(req, res) {
+app.get('/images', function(req, res) {
+
+  
 
   // your application requests refresh and access tokens
   // after checking the state parameter
@@ -91,7 +87,7 @@ app.get('/callback', function(req, res) {
         grant_type: 'authorization_code'
       },
       headers: {
-        'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+        'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64'))
       },
       json: true
     };
@@ -108,17 +104,8 @@ app.get('/callback', function(req, res) {
           json: true
         };
 
-        // use the access token to access the Spotify Web API
-        request.get(options, function(error, response, body) {
-          console.log(body);
-        });
-
-        // we can also pass the token to the browser to make requests from there
-        res.redirect('/#' +
-          querystring.stringify({
-            access_token: access_token,
-            refresh_token: refresh_token
-          }));
+        res.render("images");
+        
       } else {
         res.redirect('/#' +
           querystring.stringify({
@@ -137,7 +124,7 @@ app.get('/refresh_token', function(req, res) {
   const refresh_token = req.query.refresh_token;
   const authOptions = {
     url: 'https://accounts.spotify.com/api/token',
-    headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
+    headers: { 'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64')) },
     form: {
       grant_type: 'refresh_token',
       refresh_token: refresh_token
@@ -155,16 +142,6 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-
-app.get("/options",(req,res)=>{
-  res.render("options");
-});
-
-app.get("/images",(req,res)=>{
-  res.render("finalpage");
-  const token = "";
-  runit(token);
-});
 
 
 app.get("/chris",(req,res)=>{
