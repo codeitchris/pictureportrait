@@ -11,23 +11,37 @@
   
   <body class="aboutpg">
     <h2>what is all this?</h2>
-      <p>  
+      <p>
+        You log in with your spotify and then an image of your top artists is 
+        generated. I prompt the images to try to make them fun. Hopefully this 
+        provides a nice momento to remember the past month.  
       </p>
     <h2>how does all this work?</h2>
       <p>
+        I connect to the Spotify API to get your top artists. Then, I hit an 
+        endpoint I have set up with a model I trained using dreambooth training 
+        script from hugging face. It's a nodeJS app, using express, written
+        in typescript. All code can be found @ my github.
       </p>
     <h2>Safety</h2>
       <p>
+        The prompts that are in production have been tested to, and never produced 
+        a problematic image while in testing. Additionally, Stable Diffusion has a 
+        feature in the pipeline to detect possibly NSFW content. I have this feature 
+        enabled and if an image is flagged as possibly NSFW, I re-run with a different 
+        prompt till I get a clean image. Please contact ASAP if problematic images are 
+        generated. 
       </p>
     <h2>who made all this?</h2>
-      <p></p>
+      <p>
+        This is a chris sebastian production.
+      </p>
     <h2>links</h2>
       <ol class="listthing">
-        <li>receptify</li>
-        <li>github</li>
-        <li>ig</li>
-        <li>linkedIn</li>
-      </ol>
+        <li>inspired by <a  href="https://receiptify.herokuapp.com/"> receiptify</a></li>
+        <li>find all code on <a  href = "https://github.com/codeitchris/pictureportrait">github</a> </li>
+        <li>feel free to reach out with issues or concerns. hit me on <a  href = "https://www.instagram.com/onepasst/"> ig</a> or on <a  href = "mailto: cpsebastian7@gmail.com"> email </a></li>
+      </ol> 
   </body>
   
 </html>

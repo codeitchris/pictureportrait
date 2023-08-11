@@ -20,11 +20,7 @@ html,body{
 .homebody{
   text-align: center;
 }
-a{
-  text-decoration: none;
-  text-align: center;
-  color: rgb(6, 6, 6);
-}
+
 
 .aboutpg{
   width:80%;
@@ -32,6 +28,10 @@ a{
   margin-left: 10%;;
   padding:0;
   background-image: linear-gradient(to top, rgb(253, 219, 189,.95), rgb(246, 242, 232));
+}
+a {
+  text-decoration: underline;
+  color:rgb(96, 124, 127);
 }
 
 .button{
@@ -66,7 +66,14 @@ border: none;
 }
 .listthing{
   list-style-type: circle;
+  
 }
+.linkedListLOL {
+  text-decoration: none;
+  text-align: center;
+  color: rgb(6, 6, 6);
+}
+
 .listthing li:after{
     white-space: pre;
   

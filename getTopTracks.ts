@@ -15,5 +15,6 @@ async function getTopTracks(token:string){
 }
 
 export function runit(token: string){
+  const topTracks = getTopTracks(token);
   
 }
