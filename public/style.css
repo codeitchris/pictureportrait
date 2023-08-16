@@ -84,3 +84,14 @@ border: none;
 	gap: 1rem;
   background-image: linear-gradient(to bottom, rgb(253, 219, 189,.85), rgb(248, 242, 229));
 }
+.container {
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.specbutton {
+  margin: 1rem;
+}
+.specbutton:hover{
+  transform: scale(1.5);
+}
