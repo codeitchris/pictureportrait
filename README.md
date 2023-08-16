@@ -1,4 +1,4 @@
-# pictureportrait.
+# Picture Portrait.
 This repo contains all the code for the soon to be released picture portrait web app. 
 
 Picture Portrait will use Spotify API to get a user's top artistis, and then generate a image of the user's top artistis using a fine tuned stable diffusion model. I'm doing this project to learn more about the web side of software and also to make something that people will value and use hopefully! 
