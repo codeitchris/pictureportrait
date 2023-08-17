@@ -135,10 +135,6 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-app.get("/download-file", (req,res)=> {
-  res.download("")
-})
-
 app.get("/chris",(req,res)=>{
     res.render("chris");
 });
