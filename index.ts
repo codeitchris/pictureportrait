@@ -32,8 +32,8 @@ function generateRandomString(length: number) {
 
 app.set('view engine','ejs');
 
-app.use(express.static(path.join(__dirname,"public"))).use(cors()).use(cookieParser())
-
+app.use(express.static("public")).use(cors()).use(cookieParser())
+//path.join(__dirname,"public")
 app.get("/",(req,res)=>{
     res.render("home");
 });
@@ -135,7 +135,9 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-
+app.get("/download-file", (req,res)=> {
+  res.download("")
+})
 
 app.get("/chris",(req,res)=>{
     res.render("chris");

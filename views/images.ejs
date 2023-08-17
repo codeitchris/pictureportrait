@@ -5,17 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>images</title>
-    <link rel="stylesheet" href="/style.css">
+    <base href="/">
+    <link rel="stylesheet" type="css"  href="style.css">
     <%- include("./partials/header.ejs") %>  
   </head>
   
   <body class = "homebody">
     <div class="holder"> 
-        <span class="icons"><i class="fa fa-instagram"></i></span>
-        <span class="icons"><i class="fa fa-twitter"></i></span>
-        <span class="icons"><i class="fa fa-facebook"></i></span>
+        <span class="icons ig"><i class="fa fa-instagram"></i></span>
+        <span class="icons twtr"><i class="fa fa-twitter"></i></span>
+        <span class="icons fb"><i class="fa fa-facebook"></i></span>
+        <span class="icons dwld"><i class="fa fa-download"></i></span>
     </div>
-    <script src="https://kit.fontawesome.com/9f4756e29e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/9f4756e29e.js" crossorigin="anonymous">
+          const ig = document.querySelector(".ig");
+          const twtr = document.querySelector(".twtr");
+          const fb = document.querySelector(".fb");
+          const dwld = document.querySelector(".dwld");
+          const img = document.querySelector("img");
+          
+          const igurl = "";
+          const twtrurl = "";
+          const fburl = "";
+
+          ig.addEventListener("click", ()=>{
+              window.open(url =igurl,target="blank");
+          })
+
+          twtr.addEventListener("click", ()=>{
+              window.open(url =twtrurl,target="blank");
+          })
+
+          fb.addEventListener("click", ()=>{
+              window.open(url =fburl,target="blank");
+          })
+
+          dwld.addEventListener("click", ()=>{
+            let imgPath = img.getAttribute("src");
+            let fileName = getFileName(imgPath);
+            saveAs(imgPath,fileName);
+          })
+          function getFileName(str) {
+            return str.substring(str,lastIndexOf('/')+1);
+          }
+    </script>
   </body>
   <%- include("./partials/footer.ejs") %>  
 </html>

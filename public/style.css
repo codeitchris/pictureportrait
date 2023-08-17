@@ -84,14 +84,19 @@ border: none;
 	gap: 1rem;
   background-image: linear-gradient(to bottom, rgb(253, 219, 189,.85), rgb(248, 242, 229));
 }
-.container {
+
+.holder {
   align-items: center;
+  display: flex;
   justify-content: center;
   height: 100vh;
-}
-.holder {
   margin: 1rem;
 }
-.holder:hover{
-  transform: scale(1.5);
+.icons {
+  margin: 1rem;
+  font-size: 30px;
+  transition: transform .3s ease-in-out;
+}
+.icons:hover{
+  transform: scale(1.35);
 }
