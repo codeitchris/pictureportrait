@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
+    <title>images</title>
+    <link rel="stylesheet" href="/style.css">
+    <%- include("./partials/header.ejs") %>  
   </head>
-  <%- include("./partials/header.ejs") %>  
-  <body>
-    
-    
+  
+  <body class = "homebody">
+    <div class="holder"> 
+        <span class="icons"><i class="fa fa-instagram"></i></span>
+        <span class="icons"><i class="fa fa-twitter"></i></span>
+        <span class="icons"><i class="fa fa-facebook"></i></span>
+    </div>
+    <script src="https://kit.fontawesome.com/9f4756e29e.js" crossorigin="anonymous"></script>
   </body>
   <%- include("./partials/footer.ejs") %>  
 </html>

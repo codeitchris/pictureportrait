@@ -89,9 +89,9 @@ border: none;
   justify-content: center;
   height: 100vh;
 }
-.specbutton {
+.holder {
   margin: 1rem;
 }
-.specbutton:hover{
+.holder:hover{
   transform: scale(1.5);
 }

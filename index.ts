@@ -5,7 +5,7 @@ import cors from 'cors';
 import querystring from 'querystring';
 import cookieParser from 'cookie-parser';
 import {runit} from "./getTopTracks";
-
+import path from "path"
 
 const port = 8000;
 const app = express();
@@ -31,7 +31,8 @@ function generateRandomString(length: number) {
   };
 
 app.set('view engine','ejs');
-app.use(express.static("public")).use(cors()).use(cookieParser())
+
+app.use(express.static(path.join(__dirname,"public"))).use(cors()).use(cookieParser())
 
 app.get("/",(req,res)=>{
     res.render("home");
@@ -72,6 +73,7 @@ app.get('/images', function(req, res) {
       querystring.stringify({
         error: 'state_mismatch'
       }));
+      console.log("error1")
   } else {
     res.clearCookie(stateKey);
     const authOptions = {
@@ -92,25 +94,21 @@ app.get('/images', function(req, res) {
 
         const access_token = body.access_token,
             refresh_token = body.refresh_token;
-
-        const options = {
-          url: 'https://api.spotify.com/v1/me',
-          headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
-        };
-
-        res.render("images");
-
+          res.render("images")
+        
       } else {
+        
         res.redirect('/#' +
           querystring.stringify({
             error: 'invalid_token'
           }));
+          console.log("error2")
       }
     });
+    
   }
 
-
+  
 });
 
 app.get('/refresh_token', function(req, res) {
