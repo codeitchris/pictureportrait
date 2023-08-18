@@ -11,33 +11,45 @@
   </head>
   
   <body class = "homebody">
+    <img src="/images/image.png">
     <div class="holder"> 
-        <span class="icons ig"><i class="fa fa-instagram"></i></span>
         <span class="icons twtr"><i class="fa fa-twitter"></i></span>
-        <span class="icons fb"><i class="fa fa-facebook"></i></span>
         <span class="icons dwld"><i class="fa fa-download"></i></span>
     </div>
+    <p class = "explanation">Congrats, you have some obscure taste! Not really actually, just that at least 1 of your 
+      top artists has not been been fine tuned yet. Not a massive surprised because I've only
+      trained on the top X most popular artists. I'll continue to train the model, but 
+      with limited resources it takes a long time. So don't be surprised if the people 
+      in the image don't look quite right, because the model is simply guessing
+      what that name means and has no strong association between the name and the 
+      particular artist that it is refering too. 
+    </p>
+    <p class = "explanation">Regardless, the prompt used in the model was {prompt}. I'll 
+      add your artists to a "to be trained" list. Come back next month and hopefull 
+      you can get a better image. See you then! 
+    </p>
     <script src="https://kit.fontawesome.com/9f4756e29e.js" crossorigin="anonymous">
-          const ig = document.querySelector(".ig");
           const twtr = document.querySelector(".twtr");
-          const fb = document.querySelector(".fb");
           const dwld = document.querySelector(".dwld");
-          const img = document.querySelector("img");
           
-          const igurl = "";
-          const twtrurl = "";
-          const fburl = "";
-
-          ig.addEventListener("click", ()=>{
-              window.open(url =igurl,target="blank");
-          })
-
           twtr.addEventListener("click", ()=>{
-              window.open(url =twtrurl,target="blank");
-          })
-
-          fb.addEventListener("click", ()=>{
-              window.open(url =fburl,target="blank");
+            const tweet = async () => {
+                const filename = "image.png";
+                async function k(){
+                    try {
+                        const mediaId = await twitterClient.v1.uploadMedia("./image.png");
+                        await twitterClient.v2.tweet({
+                            text: "Picture Portrait. made this. Nice {url}",
+                            media: {
+                                media_ids: [mediaId]
+                            }
+                        });
+                    } catch (e) {
+                        console.log(e)
+                    }
+                };
+              }
+             k;
           })
 
           dwld.addEventListener("click", ()=>{
